@@ -126,7 +126,7 @@ public class FingerprintAuthModule extends ReactContextBaseJavaModule implements
     @ReactMethod
     public void cancelAuthentication() {
         final Activity activity = getCurrentActivity();
-        if (drh != null) {
+        if (drh != null && fingerprintNoDialog != null) {
             inProgress = false;
             fingerprintNoDialog.onCancelled();
         }
